@@ -7,19 +7,11 @@
 
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-
+import {
+  Setting,
+} from './models/Setting';
 
 export namespace Components {
-  interface FormElement {
-    /**
-    * The id
-    */
-    'id': string;
-    /**
-    * The label
-    */
-    'label': string;
-  }
   interface UpcButton {
     /**
     * The label
@@ -32,23 +24,23 @@ export namespace Components {
     */
     'checked': boolean;
     /**
-    * The id
-    */
-    'id': string;
-    /**
     * The label
     */
     'label': string;
+  }
+  interface UpcForm {
+    'settings': Setting;
+  }
+  interface UpcPrivacySettings {
+    'baseApi': string;
+    'productId': string;
+    'settings': Setting;
   }
   interface UpcRadio {
     /**
     * If `true`, the checkbox is selected.
     */
     'checked': boolean;
-    /**
-    * The id
-    */
-    'id': string;
     /**
     * The label
     */
@@ -59,10 +51,6 @@ export namespace Components {
     'name': string;
   }
   interface UpcText {
-    /**
-    * The id
-    */
-    'id': string;
     /**
     * The label
     */
@@ -76,16 +64,12 @@ export namespace Components {
     */
     'value': string;
   }
+  interface UpcThemePrimary {}
+  interface UpcThemeSecondary {}
 }
 
 declare global {
 
-
-  interface HTMLFormElementElement extends Components.FormElement, HTMLStencilElement {}
-  var HTMLFormElementElement: {
-    prototype: HTMLFormElementElement;
-    new (): HTMLFormElementElement;
-  };
 
   interface HTMLUpcButtonElement extends Components.UpcButton, HTMLStencilElement {}
   var HTMLUpcButtonElement: {
@@ -99,6 +83,18 @@ declare global {
     new (): HTMLUpcCheckboxElement;
   };
 
+  interface HTMLUpcFormElement extends Components.UpcForm, HTMLStencilElement {}
+  var HTMLUpcFormElement: {
+    prototype: HTMLUpcFormElement;
+    new (): HTMLUpcFormElement;
+  };
+
+  interface HTMLUpcPrivacySettingsElement extends Components.UpcPrivacySettings, HTMLStencilElement {}
+  var HTMLUpcPrivacySettingsElement: {
+    prototype: HTMLUpcPrivacySettingsElement;
+    new (): HTMLUpcPrivacySettingsElement;
+  };
+
   interface HTMLUpcRadioElement extends Components.UpcRadio, HTMLStencilElement {}
   var HTMLUpcRadioElement: {
     prototype: HTMLUpcRadioElement;
@@ -110,26 +106,31 @@ declare global {
     prototype: HTMLUpcTextElement;
     new (): HTMLUpcTextElement;
   };
+
+  interface HTMLUpcThemePrimaryElement extends Components.UpcThemePrimary, HTMLStencilElement {}
+  var HTMLUpcThemePrimaryElement: {
+    prototype: HTMLUpcThemePrimaryElement;
+    new (): HTMLUpcThemePrimaryElement;
+  };
+
+  interface HTMLUpcThemeSecondaryElement extends Components.UpcThemeSecondary, HTMLStencilElement {}
+  var HTMLUpcThemeSecondaryElement: {
+    prototype: HTMLUpcThemeSecondaryElement;
+    new (): HTMLUpcThemeSecondaryElement;
+  };
   interface HTMLElementTagNameMap {
-    'form-element': HTMLFormElementElement;
     'upc-button': HTMLUpcButtonElement;
     'upc-checkbox': HTMLUpcCheckboxElement;
+    'upc-form': HTMLUpcFormElement;
+    'upc-privacy-settings': HTMLUpcPrivacySettingsElement;
     'upc-radio': HTMLUpcRadioElement;
     'upc-text': HTMLUpcTextElement;
+    'upc-theme-primary': HTMLUpcThemePrimaryElement;
+    'upc-theme-secondary': HTMLUpcThemeSecondaryElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface FormElement {
-    /**
-    * The id
-    */
-    'id'?: string;
-    /**
-    * The label
-    */
-    'label'?: string;
-  }
   interface UpcButton {
     /**
     * The label
@@ -142,23 +143,23 @@ declare namespace LocalJSX {
     */
     'checked'?: boolean;
     /**
-    * The id
-    */
-    'id'?: string;
-    /**
     * The label
     */
     'label'?: string;
+  }
+  interface UpcForm {
+    'settings'?: Setting;
+  }
+  interface UpcPrivacySettings {
+    'baseApi'?: string;
+    'productId'?: string;
+    'settings'?: Setting;
   }
   interface UpcRadio {
     /**
     * If `true`, the checkbox is selected.
     */
     'checked'?: boolean;
-    /**
-    * The id
-    */
-    'id'?: string;
     /**
     * The label
     */
@@ -169,10 +170,6 @@ declare namespace LocalJSX {
     'name'?: string;
   }
   interface UpcText {
-    /**
-    * The id
-    */
-    'id'?: string;
     /**
     * The label
     */
@@ -186,13 +183,18 @@ declare namespace LocalJSX {
     */
     'value'?: string;
   }
+  interface UpcThemePrimary {}
+  interface UpcThemeSecondary {}
 
   interface IntrinsicElements {
-    'form-element': FormElement;
     'upc-button': UpcButton;
     'upc-checkbox': UpcCheckbox;
+    'upc-form': UpcForm;
+    'upc-privacy-settings': UpcPrivacySettings;
     'upc-radio': UpcRadio;
     'upc-text': UpcText;
+    'upc-theme-primary': UpcThemePrimary;
+    'upc-theme-secondary': UpcThemeSecondary;
   }
 }
 
@@ -202,11 +204,14 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      'form-element': LocalJSX.FormElement & JSXBase.HTMLAttributes<HTMLFormElementElement>;
       'upc-button': LocalJSX.UpcButton & JSXBase.HTMLAttributes<HTMLUpcButtonElement>;
       'upc-checkbox': LocalJSX.UpcCheckbox & JSXBase.HTMLAttributes<HTMLUpcCheckboxElement>;
+      'upc-form': LocalJSX.UpcForm & JSXBase.HTMLAttributes<HTMLUpcFormElement>;
+      'upc-privacy-settings': LocalJSX.UpcPrivacySettings & JSXBase.HTMLAttributes<HTMLUpcPrivacySettingsElement>;
       'upc-radio': LocalJSX.UpcRadio & JSXBase.HTMLAttributes<HTMLUpcRadioElement>;
       'upc-text': LocalJSX.UpcText & JSXBase.HTMLAttributes<HTMLUpcTextElement>;
+      'upc-theme-primary': LocalJSX.UpcThemePrimary & JSXBase.HTMLAttributes<HTMLUpcThemePrimaryElement>;
+      'upc-theme-secondary': LocalJSX.UpcThemeSecondary & JSXBase.HTMLAttributes<HTMLUpcThemeSecondaryElement>;
     }
   }
 }

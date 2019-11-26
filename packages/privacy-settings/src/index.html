@@ -8,12 +8,16 @@
   <script type="module" src="/build/privacy-settings.esm.js"></script>
   <script nomodule src="/build/privacy-settings.js"></script>
 
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+  <style type="text/css">
+
+    body {
+      font-family: "Open Sans";
+    }
+  </style>
+
 </head>
 <body>
-
-  <upc-text label="Input" id="testing-text" name="testing-text"></upc-text>
-  <upc-checkbox label="Checkbox" id="testing-checkbox" name="testing-checkbox"></upc-checkbox>
-  <upc-button label="Click"></upc-checkbox>
-
+  <upc-privacy-settings product-id="51d1c884-3c2f-4607-bf0d-51e72d4e8f11" base-api="http://localhost:3000/settings"></upc-privacy-settings>
 </body>
 </html>

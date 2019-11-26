@@ -1,4 +1,76 @@
-.form-element {
-  display: flex;
-  justify-content: space-between;
+/* Checkbox sizes, by default size is inherited from the parent */
+.es-check.small,
+.es-check-input.small {
+  font-size: var(--es-font-size-16);
+}
+.es-check.medium,
+.es-check-input.medium {
+  font-size: var(--es-font-size-20);
+}
+.es-check.large,
+.es-check-input.large {
+  font-size: var(--es-font-size-24);
+}
+
+.es-check-input {
+  -webkit-appearance: none;
+  background-color: var(--es-color-background);
+  border: 2px solid var(--es-color-border);
+  box-shadow: 0 0 0 0.15em var(--es-color-background) inset;
+  box-sizing: border-box;
+  display: inline-block;
+  font: inherit;
+  height: calc(1em + 4px);
+  margin: 0;
+  padding: 0;
+  position: relative;
+  vertical-align: middle;
+  width: calc(1em + 4px);
+
+  transition:
+  /**/ background-color var(--es-animation-hover),
+  /**/ border-color var(--es-animation-hover);
+}
+.es-check-input[type=radio] {
+  border-radius: 50%;
+}
+
+.es-check-input:focus,
+.es-check-input:hover {
+  border-color: var(--es-color-foreground);
+}
+
+.es-check-input:checked,
+.es-check-input[type=checkbox]:indeterminate {
+  background-color: var(--es-color-theme2);
+}
+
+.es-check-input[type=checkbox]:indeterminate:before {
+  border-color: white transparent transparent white;
+  border-style: solid;
+  border-width: 0.5em;
+  content: '';
+  display: block;
+}
+
+
+label > .es-check-input {
+  margin-right: 0.5em;
+}
+.es-check-input + label {
+  margin-left: 0.5em;
+  vertical-align: middle;
+}
+.es-check > span {
+  vertical-align: middle;
+}
+
+/* Disabled checkbox */
+.es-check-input[disabled] {
+  border: 2px solid var(--es-color-disabled) !important;
+  background-color: var(--es-color-background) !important;
+}
+.es-check-input[disabled]:checked,
+.es-check-input[disabled][type=checkbox]:indeterminate {
+  background-color: var(--es-color-disabled) !important;
 }

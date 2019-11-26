@@ -12,10 +12,6 @@ export class Text {
    */
   @Prop() label: string;
 
-  /**
-   * The id
-   */
-  @Prop() id: string;
 
   /**
    * The name
@@ -30,9 +26,10 @@ export class Text {
 
   render() {
     return (
-      <form-element label={this.label} id={this.id}>
-        <input type="text" id={this.id} name={this.name} value={this.value} />
-      </form-element>
+      <label class="es-input-text">
+        <input type="text" name={this.name} value={this.value} />
+        <span>{this.label}</span>
+      </label>
     );
   }
 }

@@ -3,6 +3,7 @@
     {
       "id": "51d1c884-3c2f-4607-bf0d-51e72d4e8f11",
       "label": "Consequat cillum dolore ullamco do voluptate anim officia Lorem.",
+      "theme": "default",
       "elements": [
         {
           "type": "text",
@@ -33,6 +34,7 @@
     {
       "id": "7c3157c8-d724-47d9-9687-4bc2c8501d32",
       "label": "Deserunt irure proident velit deserunt nostrud dolore dolor ut irure eu excepteur anim id elit..",
+      "theme": "secondary",
       "elements": [
         {
           "type": "text",
@@ -45,7 +47,7 @@
           "value": "Adipisicing laboris aliqua minim eu id sunt laboris quis id aliquip non."
         },
         {
-          "type": "select",
+          "type": "radio",
           "label": "Ullamco dolore",
           "options": [
             {
@@ -57,6 +59,11 @@
               "label": "Amet ad ullamco"
             }
           ]
+        },
+        {
+          "type": "checkbox",
+          "label": "I agree.",
+          "value": true
         }
       ]
     }

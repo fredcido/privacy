@@ -1,4 +1,134 @@
-.form-element {
-  display: flex;
-  justify-content: space-between;
+/* Default button style */
+.es-button {
+  -webkit-appearance: none;
+  background-color: var(--es-color-background);
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  color: inherit;
+  font: inherit;
+  height: 2em;
+  line-height: 1;
+  margin: 0;
+  padding: 0 calc(0.8em - 2px); /* 16 - 2px border */
+  transition:
+  /**/ background-color var(--es-animation-hover),
+  /**/ border-color var(--es-animation-hover),
+  /**/ color var(--es-animation-hover);
+  cursor: pointer;
+}
+a.es-button {
+  display: inline-block;
+}
+
+/* Button sizes, by default size is inherited from the parent */
+.es-button.small {
+  font-size: var(--es-font-size-16);
+}
+.es-button.medium {
+  font-size: var(--es-font-size-20);
+}
+.es-button.large {
+  font-size: var(--es-font-size-24);
+}
+
+/* Button with icon */
+.es-button > span {
+  display: inline-block;
+  padding: calc(.45em - 2px) 0 calc(.55em - 2px);
+  vertical-align: middle;
+}
+.es-button > svg {
+  box-sizing: border-box;
+  fill: currentColor;
+  height: calc(2em - 4px);
+  padding: calc(.5em - 4px);
+  vertical-align: middle;
+  width: calc(2em - 4px);
+  transition: fill var(--es-animation-hover);
+}
+.es-button > svg:first-child {
+  margin: 0 0 0 calc(-0.8em + 2px);
+}
+.es-button > svg:last-child {
+  margin: 0 calc(-0.8em + 2px) 0 0;
+}
+.es-button > svg:first-child:last-child {
+  margin: 0 calc(-0.8em + 2px);
+}
+
+/* Primary */
+.es-button.primary {
+  background-color: var(--es-color-theme1);
+  border-color: var(--es-color-theme1);
+  color: var(--es-color-background);
+}
+
+/* Secondary */
+.es-button.secondary {
+  border-color: var(--es-color-theme1);
+}
+
+/* Tertiary */
+.es-button.tertiary {
+  border-color: var(--es-color-grey6);
+}
+
+/* Quatarnary */
+.es-button.quatarnary {
+  border-color: transparent;
+}
+
+/* Focus state for primary, secondary, tertiary and quatarnary */
+.es-button:active,
+.es-button:focus,
+.es-button:hover {
+  background-color: var(--es-color-background);
+  border-color: var(--es-color-theme2);
+  color: var(--es-color-foreground);
+}
+
+.es-button[aria-pressed="true"] {
+  background-color: var(--es-color-theme1);
+  border-color: var(--es-color-theme1);
+  color: var(--es-color-background);
+}
+.es-button[aria-pressed="true"] > svg {
+  fill: currentColor;
+}
+
+/* Button on dark background */
+.es-button.background {
+  background: none;
+  border-color: currentColor;
+  color: currentColor;
+}
+.es-button.background[aria-pressed="true"] > svg,
+.es-button.background:focus,
+.es-button.background:hover {
+  background-color: var(--es-color-background);
+  border-color: var(--es-color-background);
+  color: var(--es-color-grey8);
+}
+
+/* Disabled button */
+.es-button[disabled],
+.es-button[disabled],
+.es-button[disabled]:focus,
+.es-button[disabled]:hover {
+  background-color: transparent;
+  border-color: var(--es-color-disabled);
+  color: var(--es-color-disabled);
+}
+.es-button[disabled] > svg {
+  fill: var(--es-color-disabled);
+}
+
+.es-button.primary[disabled],
+.es-button.primary[disabled]:focus,
+.es-button.primary[disabled]:hover {
+  background-color: var(--es-color-disabled);
+  color: var(--es-color-background);
+}
+.es-button.primary[disabled] > svg {
+  fill: var(--es-color-background);
 }

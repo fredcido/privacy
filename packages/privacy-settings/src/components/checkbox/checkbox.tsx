@@ -17,17 +17,12 @@ export class Checkbox {
    */
   @Prop() label: string;
 
-  /**
-   * The id
-   */
-  @Prop() id: string;
-
-
   render() {
     return (
-      <form-element label={this.label} id={this.id}>
-        <input type="checkbox" checked={this.checked} id={this.id} />
-      </form-element>
+      <label class="es-check">
+        <input type="checkbox" class="es-check-input" checked={this.checked} />
+        {this.label}
+      </label>
     );
   }
 }

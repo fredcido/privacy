@@ -18,20 +18,16 @@ export class Radio {
   @Prop() label: string;
 
   /**
-   * The id
-   */
-  @Prop() id: string;
-
-  /**
    * The name
    */
   @Prop() name: string;
 
   render() {
     return (
-      <form-element label={this.label} id={this.id}>
-        <input type="radio" name={this.name} checked={this.checked} />
-      </form-element>
+      <label class="es-check">
+        <input type="radio" class="es-check-input" name={this.name} checked={this.checked} />
+        {this.label}
+      </label>
     );
   }
 }

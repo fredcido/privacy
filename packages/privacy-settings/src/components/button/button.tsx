@@ -14,7 +14,7 @@ export class Button {
 
   render() {
     return (
-      <button>
+      <button type="button" class="es-button primary">
         {this.label}
       </button>
     );

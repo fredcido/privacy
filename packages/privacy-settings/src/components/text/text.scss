@@ -1,4 +1,75 @@
-.form-element {
-  display: flex;
-  justify-content: space-between;
+.es-input-text {
+  display: block;
+  position: relative;
+  font-size: var(--es-font-size-20);
+  line-height: var(--es-line-height);
+}
+.es-input-text.small {
+  font-size: var(--es-font-size-16);
+}
+.es-input-text.large {
+  font-size: var(--es-font-size-24);
+}
+
+.es-input-text > input {
+  -webkit-appearance: none;
+  background-color: transparent;
+  border-color: var(--es-color-border);
+  border-style: solid;
+  border-width: 0 0 2px;
+  box-sizing: border-box;
+  color: inherit;
+  display: block;
+  font: inherit;
+  height: 3.2em;
+  margin: 0;
+  padding: 1em 0 0;
+  position: relative;
+  vertical-align: text-bottom;
+  width: 100%;
+}
+.es-input-text > input:focus,
+.es-input-text > input:hover {
+  border-color: var(--es-color-foreground);
+}
+
+/* Label placement */
+.es-input-text > input + label,
+.es-input-text > input + span,
+.es-input-text > input:focus + label,
+.es-input-text > input:focus + span {
+  color: var(--es-color-theme1);
+  display: block;
+  font-size: var(--es-font-size-16);
+  left: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+  z-index: 1;
+
+  transition:
+  /**/ font-size var(--es-animation-hover),
+  /**/ transform var(--es-animation-hover);
+}
+
+.es-input-text > input:placeholder-shown + label,
+.es-input-text > input:placeholder-shown + span {
+  cursor: text;
+  font-size: inherit;
+  transform: translateY(1.6em);
+}
+.es-input-text > input:focus + label,
+.es-input-text > input:focus + span {
+  cursor: default;
+  font-size: var(--es-font-size-16);
+  transform: translateY(0);
+}
+
+/* Error text */
+.es-input-text.error > input {
+  border-color: var(--es-color-error-line);
+}
+.es-input-text > div {
+  color: var(--es-color-error-text);
 }
