@@ -1,0 +1,32 @@
+{
+  "name": "@upc/server",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "Frederico Estrela <f.estrelagaiva@elsevier.com>",
+  "homepage": "https://github.com/fredcido/privacy#readme",
+  "license": "ISC",
+  "main": "lib/server.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fredcido/privacy.git"
+  },
+  "scripts": {
+    "start": "json-server --watch db.json"
+  },
+  "bugs": {
+    "url": "https://github.com/fredcido/privacy/issues"
+  },
+  "dependencies": {
+    "json-server": "^0.15.1"
+  }
+}
