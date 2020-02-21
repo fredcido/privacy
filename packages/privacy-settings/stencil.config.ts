@@ -1,5 +1,6 @@
 import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
+import nodePolyfills from 'rollup-plugin-node-polyfills';
 
 export const config: Config = {
   namespace: 'privacy-settings',
@@ -12,11 +13,11 @@ export const config: Config = {
       type: 'docs-readme'
     },
     {
-      type: 'www',
-      serviceWorker: null // disable service workers
+      type: 'dist-hydrate-script'
     }
   ],
   plugins: [
-    sass()
+    sass(),
+    nodePolyfills(),
   ]
 };
